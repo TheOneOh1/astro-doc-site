@@ -1,0 +1,22 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+import StarlightPage, { type StarlightPageProps } from '@astrojs/starlight/components/StarlightPage.astro'
+
+const frontmatter: StarlightPageProps['frontmatter'] = {
+  title: 'Docs Heaven',
+  template: 'splash',
+  hero: {
+    tagline: 'Welcome to the documentation site.',
+    actions: [
+      {
+        text: 'Get started',
+        link: '/guides/example/',
+        icon: 'right-arrow',
+        variant: 'primary'
+      },
+    ]
+  }
+}
+---
+
+<StarlightPage {frontmatter} />
