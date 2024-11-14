@@ -24,6 +24,6 @@ export default defineConfig({
   })],
   outDir: './dist',
   output: 'static',
-  site: 'https://YOUR_GITHUB_USERNAME.github.io',
-  base: '/YOUR_REPO_NAME'
+  site: 'https://theoneoh1.github.io',
+  base: '/astro-doc-site'
 });
