@@ -1,9 +1,6 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
 import StarlightPage, { type StarlightPageProps } from '@astrojs/starlight/components/StarlightPage.astro'
-// Import your images
-import heroDark from '../assets/hero-dark.png';
-import heroLight from '../assets/hero-light.png';
 
 const frontmatter: StarlightPageProps['frontmatter'] = {
   title: 'Docs Heaven',
@@ -11,11 +8,6 @@ const frontmatter: StarlightPageProps['frontmatter'] = {
   hero: {
     title: 'Docs Heaven',
     tagline: 'Your personal sanctuary for documentation, notes, and knowledge management. Organized, searchable, and always accessible.',
-    image: {
-      alt: 'Docs Heaven logo with glowing effect',
-      dark: heroDark,  // Use the imported image
-      light: heroLight // Use the imported image
-    },
     actions: [
       {
         text: 'Get Started',
