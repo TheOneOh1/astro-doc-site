@@ -20,6 +20,11 @@ export default defineConfig({
       autogenerate: {
         directory: 'reference'
       }
+    }, {
+      label: 'CI-CD', // Add this section
+      autogenerate: {
+          directory: 'ci-cd' // Ensure this matches your folder name
+        }
     }]
   })],
   outDir: './dist',
