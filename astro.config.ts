@@ -23,8 +23,23 @@ export default defineConfig({
     }, {
       label: 'CI-CD', // Add this section
       autogenerate: {
-          directory: 'ci-cd' // Ensure this matches your folder name
+          directory: 'CI-CD' // Ensure this matches your folder name
         }
+    }, {
+      label: 'Installation', // Add this section
+      autogenerate: {
+          directory: 'Installation' // Ensure this matches your folder name
+        }
+      }, {
+        label: 'Notes', // Add this section
+        autogenerate: {
+            directory: 'Notes' // Ensure this matches your folder name
+          }
+        }, {
+          label: 'Scripts', // Add this section
+          autogenerate: {
+              directory: 'Scripts' // Ensure this matches your folder name
+            }
     }]
   })],
   outDir: './dist',
