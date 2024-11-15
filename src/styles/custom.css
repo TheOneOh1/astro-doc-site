@@ -1,0 +1,36 @@
+:root {
+  --docs-heading-color: #ffffff;
+  --docs-accent-color: #818cf8;
+}
+
+[data-theme='light'] {
+  --docs-heading-color: #1f2937;
+  --docs-accent-color: #4f46e5;
+}
+
+.hero {
+  background: linear-gradient(to bottom right, 
+    rgba(76, 29, 149, 0.1),
+    rgba(124, 58, 237, 0.1)
+  );
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--docs-heading-color), var(--docs-accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.hero-tagline {
+  text-align: center;
+  color: var(--sl-color-gray-2);
+  font-size: 1.25rem;
+  max-width: 60ch;
+  margin: 1rem auto;
+} 

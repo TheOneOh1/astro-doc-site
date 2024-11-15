@@ -4,6 +4,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   integrations: [starlight({
     title: 'Docs Heaven',
+    customCss: [
+      './src/styles/custom.css'
+    ],
     components: {
       Search: './src/components/starlight/Search.astro'
     },

@@ -6,17 +6,86 @@ const frontmatter: StarlightPageProps['frontmatter'] = {
   title: 'Docs Heaven',
   template: 'splash',
   hero: {
-    tagline: 'Welcome to the documentation site.',
+    title: 'Docs Heaven',
+    tagline: 'Your personal sanctuary for documentation, notes, and knowledge management. Organized, searchable, and always accessible.',
+    image: {
+      alt: 'Docs Heaven logo with glowing effect',
+      // You can add a dark/light theme aware hero image here
+      dark: './src/assets/hero-dark.png',
+      light: './src/assets/hero-light.png'
+    },
     actions: [
       {
-        text: 'Get started',
+        text: 'Get Started',
         link: '/astro-doc-site/guides/example/',
         icon: 'right-arrow',
         variant: 'primary'
-      },
+      }
     ]
-  }
+  },
+  features: [
+    {
+      title: 'Organized',
+      description: 'Keep your documentation structured and easily accessible',
+      icon: 'folders' // This uses Starlight's built-in icons
+    },
+    {
+      title: 'Searchable',
+      description: 'Find what you need quickly with powerful search capabilities',
+      icon: 'magnifier'
+    },
+    {
+      title: 'Accessible',
+      description: 'Access your documents anytime, anywhere, on any device',
+      icon: 'device-desktop'
+    }
+  ]
 }
 ---
 
-<StarlightPage {frontmatter} />
+<style>
+  /* Add custom styles for the glowing effect */
+  :root {
+    --glow-color: rgba(76, 29, 149, 0.5);
+  }
+
+  .hero-title {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px var(--glow-color);
+    }
+    to {
+      box-shadow: 0 0 30px var(--glow-color);
+    }
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-border);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+</style>
+
+<StarlightPage {frontmatter}>
+  <slot />
+</StarlightPage>
