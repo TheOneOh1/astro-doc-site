@@ -2,18 +2,11 @@
 
 ## Overview
 
-The Starlight Auth Documentation Site is a comprehensive documentation platform built using Astro and Starlight. It provides guides, references, and CI/CD information for developers looking to understand and implement authentication solutions. The site is designed to be user-friendly, with a structured sidebar for easy navigation through various topics.
-
-## Features
-
-- **Guides**: Step-by-step instructions on using the authentication features.
-- **Reference**: Detailed API documentation and technical references.
-- **CI/CD**: Information on continuous integration and deployment practices.
-- **Search Functionality**: Quickly find relevant documentation using the integrated search component.
+The Starlight Auth Documentation Site is a comprehensive documentation platform built using Astro and Starlight. It renders and stores your markdown documentation in one place. The site is designed to be user-friendly, with a structured sidebar for easy navigation through various topics.
 
 ## Getting Started
 
-To clone and start developing the Starlight Auth Documentation Site locally, follow these steps:
+To clone and start developing the Starlight Documentation Site locally, follow these steps:
 
 ### Prerequisites
 
@@ -50,7 +43,6 @@ To start the local development server, run:
 ```bash
 npm run dev
 ```
-
 
 This will start the server, and you can view the site in your browser at `http://localhost:3000`.
 
