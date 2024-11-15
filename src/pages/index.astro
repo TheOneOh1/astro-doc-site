@@ -41,22 +41,35 @@ const frontmatter: StarlightPageProps['frontmatter'] = {
   /* Add custom styles for the glowing effect */
   :root {
     --glow-color: rgba(76, 29, 149, 0.5);
+    --neon-color: #818cf8;
+    --neon-text-shadow: 0 0 7px var(--neon-color),
+                        0 0 10px var(--neon-color),
+                        0 0 21px var(--neon-color),
+                        0 0 42px var(--neon-color);
+  }
+
+  [data-theme='light'] {
+    --neon-color: #4f46e5;
+    --neon-text-shadow: 0 0 7px var(--neon-color),
+                        0 0 10px var(--neon-color),
+                        0 0 21px var(--neon-color);
   }
 
   .hero-title {
     position: relative;
     text-align: center;
     padding: 2rem;
-    background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
-    animation: glow 3s ease-in-out infinite alternate;
+    color: var(--sl-color-white);
+    text-shadow: var(--neon-text-shadow);
+    animation: flicker 3s infinite alternate;
   }
 
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 20px var(--glow-color);
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: var(--neon-text-shadow);
     }
-    to {
-      box-shadow: 0 0 30px var(--glow-color);
+    20%, 22%, 24%, 55% {
+      text-shadow: none;
     }
   }
 
