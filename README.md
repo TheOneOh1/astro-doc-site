@@ -1,35 +1,102 @@
-# Starlight Starter Kit: Auth
+# Starlight Auth Documentation Site
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+## Overview
 
+The Starlight Auth Documentation Site is a comprehensive documentation platform built using Astro and Starlight. It provides guides, references, and CI/CD information for developers looking to understand and implement authentication solutions. The site is designed to be user-friendly, with a structured sidebar for easy navigation through various topics.
+
+## Features
+
+- **Guides**: Step-by-step instructions on using the authentication features.
+- **Reference**: Detailed API documentation and technical references.
+- **CI/CD**: Information on continuous integration and deployment practices.
+- **Search Functionality**: Quickly find relevant documentation using the integrated search component.
+
+## Getting Started
+
+To clone and start developing the Starlight Auth Documentation Site locally, follow these steps:
+
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm (Node package manager)
+
+### Clone the Repository
+
+1. Open your terminal.
+2. Clone the repository using the following command:
+
+   ```bash
+   git clone https://github.com/yourusername/starlight-auth.git
+   ```
+
+3. Navigate into the project directory:
+
+   ```bash
+   cd starlight-auth
+   ```
+
+### Install Dependencies
+
+Run the following command to install the necessary dependencies:
+
+```bash
+npm install
 ```
-npm create astro@latest -- --template TheOtterlord/starlight-auth
+
+### Start the Development Server
+
+To start the local development server, run:
+
+```bash
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/TheOtterlord/starlight-auth/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/TheOtterlord/starlight-auth/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FTheOtterlord%2Fstarlight-auth%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
 
-## Setting up Auth
+This will start the server, and you can view the site in your browser at `http://localhost:3000`.
 
-<!-- Authentication is configured in `auth.config.js`, and handled in `src/server/index.ts` for node deployments, or `middleware.js` for Vercel(/Netlify). Any on-demand `.astro` page may also access the session, like seen in `index.astro`. -->
+## Adding New Folders and Documents
 
-### Authentication
+To add new folders and documents to the site, follow these steps:
 
-You can customize the available sign-in methods in `auth.config.js`. [Auth.js](https://authjs.dev) supports [e-mail signin](https://authjs.dev/getting-started/authentication/email), traditional [username/password](https://authjs.dev/getting-started/authentication/credentials) auth, and 80+ [OAuth](https://authjs.dev/getting-started/authentication/oauth) providers. This template uses GitHub OAuth as an example.
+1. **Create a New Folder**: Navigate to the `src/content/docs/` directory and create a new folder for your topic (e.g., `CI-CD`).
 
-### Authorization
+2. **Add Markdown Files**: Inside the new folder, create markdown files for your documentation. Each file should include frontmatter at the top, like this:
 
-By default, any authenticated user will be authorized to view your gated content. You can add additional authorization checks to the `isAuthed` function in `src/lib/auth.ts`. If the function returns `true`, a user it authorized to access the page, and vice-versa if `false` is returned. The example logic restricts access to routes defined in `paths` above the `isAuthed` function.
+   ```markdown
+   ---
+   title: Your Title Here
+   description: A brief description of the content.
+   ---
+   ```
 
-### Environment Variables
+3. **Update the Sidebar**: Open the `astro.config.ts` file and update the sidebar configuration to include your new folder. For example:
 
-You may require different environment variables depending on your authentication method(s). Follow the example given in `.env.example` to create your `.env` file, replacing the `GITHUB` variables with the variables for your auth provider.
+   ```typescript
+   sidebar: [{
+     label: 'CI-CD',
+     autogenerate: {
+       directory: 'CI-CD' // Ensure this matches your folder name
+     }
+   }]
+   ```
 
-## Deploy
+4. **Rebuild the Project**: After adding your new documents, run the build command again to ensure they are included in the site:
 
-In `astro.config.ts`, comment out the `adapter` for the platform you want to deploy to, removing the others. Deploy to your preferred provider, adding the environment variables you've defined.
+   ```bash
+   npm run build
+   ```
 
-## Want to learn more?
+5. **Preview Your Changes**: Use the preview command to check your changes:
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+   ```bash
+   npm run preview
+   ```
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
