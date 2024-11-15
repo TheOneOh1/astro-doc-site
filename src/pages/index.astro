@@ -1,6 +1,9 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
 import StarlightPage, { type StarlightPageProps } from '@astrojs/starlight/components/StarlightPage.astro'
+// Import your images
+import heroDark from '../assets/hero-dark.png';
+import heroLight from '../assets/hero-light.png';
 
 const frontmatter: StarlightPageProps['frontmatter'] = {
   title: 'Docs Heaven',
@@ -10,9 +13,8 @@ const frontmatter: StarlightPageProps['frontmatter'] = {
     tagline: 'Your personal sanctuary for documentation, notes, and knowledge management. Organized, searchable, and always accessible.',
     image: {
       alt: 'Docs Heaven logo with glowing effect',
-      // You can add a dark/light theme aware hero image here
-      dark: './src/assets/hero-dark.png',
-      light: './src/assets/hero-light.png'
+      dark: heroDark,  // Use the imported image
+      light: heroLight // Use the imported image
     },
     actions: [
       {
@@ -27,7 +29,7 @@ const frontmatter: StarlightPageProps['frontmatter'] = {
     {
       title: 'Organized',
       description: 'Keep your documentation structured and easily accessible',
-      icon: 'folders' // This uses Starlight's built-in icons
+      icon: 'folders'
     },
     {
       title: 'Searchable',
